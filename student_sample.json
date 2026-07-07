@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Fatima",
+        "roll_no": 205,
+        "age": 20,
+        "course": "Maths"
+    },
+    {
+        "name": "Ahmad",
+        "roll_no": 201,
+        "age": 29,
+        "course": "Software Engineering"
+    },
+    {
+        "name": "Zainab",
+        "roll_no": 202,
+        "age": 20,
+        "course": "Physics"
+    }
+]
