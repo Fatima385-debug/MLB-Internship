@@ -1,0 +1,149 @@
+[
+  {
+    "image": "000aee0af66d4237_jpg.rf.6b99256606e5b7a1ede8b833a87196a7.jpg",
+    "ground_truth": "Watermelon",
+    "detections": [
+      {
+        "class": "person",
+        "confidence": 0.3
+      }
+    ]
+  },
+  {
+    "image": "000d9c59687b509b_jpg.rf.c338360b3dfe1953a5d266ee861d7e79.jpg",
+    "ground_truth": "Apple",
+    "detections": [
+      {
+        "class": "person",
+        "confidence": 0.89
+      },
+      {
+        "class": "person",
+        "confidence": 0.864
+      },
+      {
+        "class": "person",
+        "confidence": 0.673
+      },
+      {
+        "class": "person",
+        "confidence": 0.602
+      },
+      {
+        "class": "bicycle",
+        "confidence": 0.507
+      },
+      {
+        "class": "person",
+        "confidence": 0.499
+      },
+      {
+        "class": "apple",
+        "confidence": 0.253
+      }
+    ]
+  },
+  {
+    "image": "000e4e7ed48c932d_jpg.rf.8233751e16b32b9470e45c6135c8f8c7.jpg",
+    "ground_truth": "Orange",
+    "detections": [
+      {
+        "class": "orange",
+        "confidence": 0.707
+      }
+    ]
+  },
+  {
+    "image": "006e0a3d99d16d60_jpg.rf.258f5af33beab4d59918218c732de430.jpg",
+    "ground_truth": "Grape",
+    "detections": [
+      {
+        "class": "bowl",
+        "confidence": 0.629
+      },
+      {
+        "class": "apple",
+        "confidence": 0.31
+      }
+    ]
+  },
+  {
+    "image": "0074691e66aa85c0_jpg.rf.2fc1e81bbe5377b89f9c912c52ff7905.jpg",
+    "ground_truth": "Apple_Banana",
+    "detections": [
+      {
+        "class": "orange",
+        "confidence": 0.676
+      },
+      {
+        "class": "apple",
+        "confidence": 0.656
+      },
+      {
+        "class": "apple",
+        "confidence": 0.473
+      },
+      {
+        "class": "apple",
+        "confidence": 0.429
+      },
+      {
+        "class": "banana",
+        "confidence": 0.362
+      },
+      {
+        "class": "banana",
+        "confidence": 0.342
+      },
+      {
+        "class": "apple",
+        "confidence": 0.316
+      },
+      {
+        "class": "apple",
+        "confidence": 0.307
+      },
+      {
+        "class": "orange",
+        "confidence": 0.304
+      }
+    ]
+  },
+  {
+    "image": "00a70c466ad1fe24_jpg.rf.cf298c47a082719e705775c1ec343775.jpg",
+    "ground_truth": "Pineapple",
+    "detections": [
+      {
+        "class": "person",
+        "confidence": 0.435
+      }
+    ]
+  },
+  {
+    "image": "00d843af60eecf7c_jpg.rf.868bfcbb7f5f2cc63f82441d7ddcf577.jpg",
+    "ground_truth": "Banana",
+    "detections": []
+  },
+  {
+    "image": "037d96c648255043_jpg.rf.7a48f71356de00f7fab42bcd8f0c8bb1.jpg",
+    "ground_truth": "Watermelon",
+    "detections": [
+      {
+        "class": "apple",
+        "confidence": 0.843
+      },
+      {
+        "class": "orange",
+        "confidence": 0.444
+      },
+      {
+        "class": "apple",
+        "confidence": 0.373
+      },
+      {
+        "class": "apple",
+        "confidence": 0.27
+      }
+    ]
+  }
+]
