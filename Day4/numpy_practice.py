@@ -36,7 +36,7 @@ print("Std:", arr.std()) # 4.183300132670378
 #reshaping
 arr = np.arange(12)          # [0, 1, 2, ..., 11]
 reshaped = arr.reshape(3, 4) # 3 rows, 4 columns
-flattened = reshaped.flatten()
+flattened = reshaped.flatten() 
 print("\nReshaping:")
 print("Original:", arr) 
 print("Reshaped:\n", reshaped)

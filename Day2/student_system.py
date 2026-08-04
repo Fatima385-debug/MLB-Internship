@@ -1,12 +1,12 @@
 
-students = [] #dictionaries will be stored in this list
+students = [] #List to store student records
 
 # Core features
 def add_student():
     print("\nAdd Student")
-    name = get_non_emptystr("Enter Name: ")
+    name = get_non_emptystr("Enter Name: ") 
 
-    roll_no = get_positive_int("Enter Roll Number: ")
+    roll_no = get_positive_int("Enter Roll Number: ") 
     if roll_number_exists(roll_no):
         print(f"A student with roll number {roll_no} already exists. Cannot add duplicate.")
         return
@@ -20,7 +20,7 @@ def add_student():
         "age": age,
         "course": course,
     }
-    students.append(student)
+    students.append(student) # Add the new student record to the students list
     print(f"Student '{name}' added successfully!\n")
 
 
@@ -30,7 +30,7 @@ def view_all_students():
         print("No student records found.\n")
         return
 
-    print(f"{'Roll No':<10}{'Name':<20}{'Age':<6}{'Course':<20}")
+    print(f"{'Roll No':<10}{'Name':<20}{'Age':<6}{'Course':<20}") # Prints the header for the student records table with formatted columns
     for student in students:
         print(f"{student['roll_no']:<10}{student['name']:<20}{student['age']:<6}{student['course']:<20}")
     print()
@@ -45,7 +45,7 @@ def search_student():
     print("Search by:")
     print("1. Roll Number")
     print("2. Name")
-    choice = input("Enter choice (1/2): ").strip()
+    choice = input("Enter choice (1/2): ").strip() 
 
     if choice == "1":
         roll_no = get_positive_int("Enter roll number to search: ")
@@ -58,7 +58,7 @@ def search_student():
 
     elif choice == "2":
         name = get_non_emptystr("Enter Name to search: ").lower()
-        results = [s for s in students if name in s["name"].lower()]
+        results = [s for s in students if name in s["name"].lower()] # Searches for students whose names contain the search term (case-insensitive)
         if results:
             print(f"Found {len(results)} matching student(s):")
             for s in results:
@@ -86,7 +86,7 @@ def update_student():
     print(f"Current details: {student}")
     print("Leave field blank to keep current value.")
 
-    new_name = input(f"Enter new Name [{student['name']}]: ").strip()
+    new_name = input(f"Enter new Name [{student['name']}]: ").strip() 
     if new_name:
         student["name"] = new_name
 
@@ -131,7 +131,7 @@ def display_total_students():
 # Input validation helpers
 def get_non_emptystr(prompt):
     while True:
-        value = input(prompt).strip()
+        value = input(prompt).strip() # Get input from user and strip whitespace
         if value:
             return value
         print("Input cannot be empty. Try again.")
@@ -139,8 +139,8 @@ def get_non_emptystr(prompt):
 
 def get_positive_int(prompt):
     while True:
-        value = input(prompt).strip()
-        if value.isdigit() and int(value) > 0:
+        value = input(prompt).strip() 
+        if value.isdigit() and int(value) > 0: # Check if the input is a positive integer
             return int(value)
         print("Invalid input. Please enter a positive whole number.")
 

@@ -14,14 +14,14 @@ def main():
     name=input("Enter your name: ")
     class_name=input("Enter your class name: ")
     subject=int(input("Enter the number of subjects: "))
-    total = 0
-    subjects = {}
+    total = 0 # Initialize total marks
+    subjects = {} # Dictionary to store subject names and marks
 
-    for i in range(subject):
+    for i in range(subject): # Loop to get subject names and marks
         subject_name=input(f"Enter the name of subject {i+1}: ")
         marks=float(input(f"Enter the marks obtained in {subject_name}: "))
-        subjects[subject_name] = marks
-        total += marks
+        subjects[subject_name] = marks # Store subject name and marks in the dictionary
+        total += marks # Add marks to total
 
     average = total / subject
     grade = calculate_avg(average)

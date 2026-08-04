@@ -1,6 +1,6 @@
 # LISTS
 def find_largest(numbers):
-    largest = numbers[0]
+    largest = numbers[0] # Initialize largest with the first element of the list
     for number in numbers:
         if number > largest:
             largest = number
@@ -8,29 +8,29 @@ def find_largest(numbers):
 print(find_largest([4,2,5,8,1]))  # Output: 8
 
 def second_largest(numbers):
-    unique_sorted=sorted(set(numbers), reverse=True) # sorts the numbers in desc order
-    if len(unique_sorted) < 2:
+    unique_sorted=sorted(set(numbers), reverse=True) # Sorts the unique numbers in desc order 
+    if len(unique_sorted) < 2: # Checks if there is a second largest number
         return None  # Return None if there is no second largest number
-    return unique_sorted[1]
+    return unique_sorted[1] # Returns the second largest number from the sorted unique numbers
 print(second_largest([4,7,3,10,1])) # Output: 7
 
 def remove_duplicates(numbers):
-    return list(set(numbers))  
+    return list(set(numbers))  # Converts the list to a set (which removes duplicates) and then back to a list
 print(remove_duplicates([4,2,5,8,1,2,4]))  # Output: [1,2,4,5,8]
 
 def reverse_list(lst):
-    reversed_lst = []
-    for i in range(len(lst)-1, -1, -1):
-        reversed_lst.append(lst[i])
-    return reversed_lst
+    reversed_lst = [] # Initialize an empty list to store the reversed elements
+    for i in range(len(lst)-1, -1, -1): # Loop through the list in reverse order
+        reversed_lst.append(lst[i]) # Append each element to the reversed list
+    return reversed_lst 
 print(reverse_list([1,2,3,4,5]))  # Output: [5,4,3,2,1]
 
 def common_elements(list1,list2):
-    return list(set(list1) & set(list2)) 
+    return list(set(list1) & set(list2)) # Returns the common elements between two lists by converting them to sets and finding the intersection
 print(common_elements([1,6,3,5], [3,7,9,6]))  # Output: [3, 6]
 
 # TUPLES
-numbers_tuple = (1,6,3,5,4,5,9)
+numbers_tuple = (1,6,3,5,4,5,9) 
 print(numbers_tuple.count(5))  # Output: 2
 
 t = (1,8,2,6)
@@ -42,7 +42,7 @@ print(back_to_tuple)          # (1,8,2,6)
 
 #SETS
 nums = [11,5,15,13,8,8,5]
-unique_values = set(nums)
+unique_values = set(nums) 
 print(unique_values)   # {11,5,15,13,8}
 
 set1 = {11,32,13,24}
@@ -65,10 +65,10 @@ students = {
     "Zainab": [70,75,80]
 }
 
-def average(marks_list):
-    return sum(marks_list) / len(marks_list)
+def average(marks_list): # Calculate the average of a list of numbers
+    return sum(marks_list) / len(marks_list) 
 
-for name, marks in students.items():
+for name, marks in students.items(): # Iterate through the dictionary
     print(f"{name}'s average: {average(marks):.2f}")
 
 # Output:
@@ -76,12 +76,12 @@ for name, marks in students.items():
 # Sara's average: 89.33
 # Zainab's average: 75.00
 
-def word_frequency(sentence):
-    words = sentence.lower().split()
-    frequency = {}
-    for word in words:
+def word_frequency(sentence): 
+    words = sentence.lower().split() # Splits the sentence into words and converts them to lowercase
+    frequency = {} # Initialize an empty dictionary to store word frequencies
+    for word in words: 
         word = word.strip(".,!?")   # remove punctuation
-        frequency[word] = frequency.get(word, 0) + 1
+        frequency[word] = frequency.get(word, 0) + 1 # Updates the count of each word in the frequency dictionary, initializing to 0 if the word is not already present
     return frequency
 
 sentence = "the dog is barking at the boy. the boy is scared!!"
