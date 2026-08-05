@@ -16,9 +16,9 @@ with open("data.json","r") as f:
 #update data in json file
 with open("data.json","r") as f:
     data = json.load(f)
-for s in data:
+for s in data: 
     if s["id"] == 1:
-        s["grade"] = "A+"
+        s["grade"] = "A+" 
         break
 
 with open("data.json","w") as f:

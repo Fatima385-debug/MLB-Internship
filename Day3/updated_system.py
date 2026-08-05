@@ -7,39 +7,39 @@ DATA_FILE = "student_sample.json"
 students = []
 
 def load_students():
-    global students
+    global students # Declare students as global to modify the global variable
     if not os.path.exists(DATA_FILE):
         print(f"No existing data found ('{DATA_FILE}'). starting with an empty list.")
         students = []
         return
 
-    try:
+    try: # Open the JSON file in read mode and load the data into the students list
         with open(DATA_FILE, "r") as f:
             data = json.load(f)
-            if isinstance(data, list):
+            if isinstance(data, list): # Check if the loaded data is a list (valid format)
                 students = data
-                print(f"loaded {len(students)} student records from '{DATA_FILE}'.")
+                print(f"loaded {len(students)} student records from '{DATA_FILE}'.") # Print the number of records loaded
             else:
                 print("file format is invalid. starting again.")
                 students = []
-    except json.JSONDecodeError:
+    except json.JSONDecodeError: # Handle JSON decoding errors (e.g., if the file is empty or contains invalid JSON)
         print(f"Warning: '{DATA_FILE}' contains invalid JSON.")
         students = []
     except (IOError, OSError) as e:
         print(f"Warning: Could not read '{DATA_FILE}' ({e}).")
-        students = []
+        students = [] 
 
 
 def save_students():
-    try:
+    try: # Open the JSON file in write mode and save the students list to it 
         with open(DATA_FILE, "w") as f:
-            json.dump(students, f, indent=4)
-    except (IOError, OSError) as e:
+            json.dump(students, f, indent=4) # Save the students list to the JSON file with indentation for readability
+    except (IOError, OSError) as e: # Handle file I/O errors (e.g., if the file cannot be written to)
         print(f"Error: Could not save data to '{DATA_FILE}' ({e})")
 
 def get_non_empty_string(prompt):
     while True:
-        try:
+        try: # Get input from user and strip whitespace
             value = input(prompt).strip()
             if not value:
                 raise ValueError("Input cannot be empty.")
@@ -50,7 +50,7 @@ def get_non_empty_string(prompt):
 
 def get_positive_int(prompt):
     while True:
-        raw_value = input(prompt).strip()
+        raw_value = input(prompt).strip() 
         try:
             value = int(raw_value)
             if value <= 0:
@@ -172,7 +172,7 @@ def update_student():
                 age_value = int(new_age)
                 if age_value <= 0:
                     raise ValueError
-                student["age"] = age_value
+                student["age"] = age_value # Update age only if the input is a valid positive integer
             except ValueError:
                 print("Invalid age input. Keeping previous value.")
 
