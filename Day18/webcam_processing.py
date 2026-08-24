@@ -1,16 +1,3 @@
-"""
-Day 18 - Real-Time Webcam Processing with OpenCV
---------------------------------------------------
-Captures live video from your webcam, applies grayscale + Gaussian Blur +
-Canny Edge Detection to every frame, shows the live feed, and saves the
-processed stream to a video file.
-
-Controls:
-    q  -> quit and save the output video
-
-Usage:
-    python webcam_processing.py --output webcam_output.mp4 --camera 0
-"""
 
 import argparse
 import cv2

@@ -1,18 +1,3 @@
-"""
-Day 18 - Video Processing with OpenCV
---------------------------------------
-This script demonstrates the core building blocks of video processing:
-
-1. Reading a video file
-2. Reading video properties (FPS, width, height, total frame count)
-3. Looping through the video frame by frame
-4. Converting each frame to grayscale
-5. Applying Canny Edge Detection
-6. Writing/saving the processed frames as a new video file
-
-Usage:
-    python video_processing.py --input path/to/input_video.mp4 --output path/to/output_video.mp4
-"""
 
 import argparse
 import os
@@ -20,7 +5,6 @@ import cv2
 
 
 def get_video_properties(cap: cv2.VideoCapture) -> dict:
-    """Read and return the basic properties of an opened video."""
     fps = cap.get(cv2.CAP_PROP_FPS)
     width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
     height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
@@ -47,12 +31,11 @@ def process_video(input_path: str, output_path: str, display: bool = True) -> No
 
     # 2. Print video properties
     props = get_video_properties(cap)
-    print("----- Video Properties -----")
     print(f"FPS            : {props['fps']:.2f}")
     print(f"Width x Height : {props['width']} x {props['height']}")
     print(f"Total Frames   : {props['total_frames']}")
     print(f"Duration (sec) : {props['duration_sec']:.2f}")
-    print("-----------------------------")
+ 
 
     # 3. Set up the VideoWriter to save the processed (edge-detected) video.
     #    Canny output is single-channel (grayscale), so isColor=False.

@@ -1,25 +1,3 @@
-"""
-Day 18 - Mini Project: Real-Time Video Processing Tool
----------------------------------------------------------
-A single tool that works on EITHER a recorded video file OR a live webcam
-feed. For every frame it:
-
-    1. Converts to grayscale
-    2. Applies Gaussian Blur (noise reduction)
-    3. Applies Canny Edge Detection
-    4. Displays the original frame and the processed frame side by side
-    5. Writes the processed frames to a new output video file
-
-Usage:
-    # Process a video file
-    python mini_project.py --source video --input input.mp4 --output processed_output.mp4
-
-    # Process the webcam live
-    python mini_project.py --source webcam --output webcam_processed.mp4
-
-Controls:
-    q -> quit (works for both video file and webcam mode)
-"""
 
 import argparse
 import os
@@ -28,10 +6,7 @@ import numpy as np
 
 
 def process_frame(frame: np.ndarray) -> np.ndarray:
-    """Apply the full processing pipeline to a single BGR frame.
 
-    Returns a single-channel (grayscale) edge-detected frame.
-    """
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     blurred = cv2.GaussianBlur(gray, (5, 5), 0)
     edges = cv2.Canny(blurred, 100, 200)
@@ -39,8 +14,7 @@ def process_frame(frame: np.ndarray) -> np.ndarray:
 
 
 def make_side_by_side(original: np.ndarray, processed: np.ndarray) -> np.ndarray:
-    """Stack the original (BGR) and processed (grayscale) frames horizontally
-    for a combined preview window."""
+
     processed_bgr = cv2.cvtColor(processed, cv2.COLOR_GRAY2BGR)
     # Resize both to the same height, just in case
     h = min(original.shape[0], processed_bgr.shape[0])
@@ -67,14 +41,12 @@ def run(source: str, input_path: str, output_path: str, camera_index: int = 0, d
     height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
     total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT)) if source == "video" else -1
 
-    print("----- Source Properties -----")
     print(f"Mode           : {source}")
     print(f"FPS            : {fps:.2f}")
     print(f"Width x Height : {width} x {height}")
     if total_frames > 0:
         print(f"Total Frames   : {total_frames}")
-    print("------------------------------")
-
+    
     fourcc = cv2.VideoWriter_fourcc(*"mp4v")
     out = cv2.VideoWriter(output_path, fourcc, fps, (width, height), isColor=False)
 
