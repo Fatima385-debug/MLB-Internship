@@ -1,0 +1,5 @@
+# Ignore all MP4 videos
+*.mp4
+
+# Ignore generated Day18 outputs
+Day18/outputs/
